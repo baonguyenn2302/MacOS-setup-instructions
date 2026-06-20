@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Cài Đặt Môi Trường Lập Trình (macOS)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #e1e8ed;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+            margin-top: 25px;
+        }
+        p, li {
+            font-size: 15px;
+        }
+        .code-wrapper {
+            position: relative;
+            margin: 8px 0; 
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 12px 70px 12px 15px; 
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: "Consolas", "Courier New", monospace;
+            font-size: 14px;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            transform: translateY(-50%);
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .copy-btn:hover {
+            background-color: #45a049;
+        }
+        .copy-btn.copied {
+            background-color: #007bff;
+        }
+        .note {
+            background-color: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .expected-output {
+            color: #6a737d;
+            font-family: "Consolas", "Courier New", monospace;
+            font-size: 13.5px;
+            margin-top: -4px;
+            margin-bottom: 12px;
+            padding-left: 15px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .extension-list {
+            background: #f1f8ff;
+            padding: 15px 30px;
+            border-radius: 6px;
+        }
+        .ext-red {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Cài Đặt Môi Trường Lập Trình (macOS)</h1>
+
+    <h2>1. IDE (Visual Studio Code)</h2>
+      <strong>Cài đặt:</strong> Tải và cài đặt trực tiếp từ <a href="https://code.visualstudio.com/" target="_blank" title="Visual Studio Code">Visual Studio Code</a>
+      <div class="codeinpath">
+        <strong>Cấu hình hệ thống:</strong> Sau khi cài, mở bảng lệnh (<code>Cmd + Shift + P</code>), tìm và chọn:
+        <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>Install 'code' command in PATH</code></pre></div>
+      </div>
+
+    <h2>2. Lập trình C/C++</h2>
+    <p>Trong Terminal, chạy lần lượt các lệnh:</p>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>xcode-select --install</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>clang --version</code></pre></div>
+    <p>Trong VS Code, cài đặt Extension: <strong class="ext-red">C/C++</strong></p>
+
+    <h2>3. Lập trình C#</h2>
+    <h3>3.1. Cài đặt Homebrew</h3>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo $SHELL</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' &gt;&gt; ~/.zprofile</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>eval "$(/opt/homebrew/bin/brew shellenv)"</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>brew --version</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>which brew</code></pre></div>
+
+    <h2>4. Lập trình .NET</h2>
+    <h3>4.1. Cài đặt .NET SDK</h3>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>brew install --cask dotnet-sdk</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>dotnet --version</code></pre></div>
+    
+    <div class="note">
+        <strong>Lưu ý:</strong> Nếu báo lỗi <code>command not found</code>, chạy tiếp các lệnh sau:
+        <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo 'export PATH="/opt/homebrew/bin:$PATH"' &gt;&gt; ~/.zprofile</code></pre></div>
+        <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>source ~/.zprofile</code></pre></div>
+    </div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>which dotnet</code></pre></div>
+    <p>Trong VS Code, cài đặt Extension: <strong class="ext-red">C# Dev Kit</strong></p>
+
+    <h2>5. Lập trình Python</h2>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>brew install python</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo 'export PATH="/opt/homebrew/bin:$PATH"' &gt;&gt; ~/.zprofile</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>source ~/.zprofile</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>python3 --version</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>which python3</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>brew install python@3.10</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>python3.10 --version</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>which python3.10</code></pre></div>
+    
+    <h3>5.1. Cấu hình trong VS Code</h3>
+    <ul>
+        <li>Cài đặt Extension: <strong class="ext-red">Python</strong></li>
+        <li>Nhấn <code>Cmd + Shift + P</code>, copy và dán lệnh sau vào:
+            <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>Python: Select Interpreter</code></pre></div>
+        </li>
+        <li>Sau đó chọn đường dẫn (interpreter) có chứa <strong>homebrew</strong>.</li>
+    </ul>
+
+    <h2>6. Lập trình Mobile (Flutter & Dart)</h2>
+    <h3>6.1. Cài đặt Flutter</h3>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>brew install --cask flutter</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo 'export PATH="$PATH:/opt/homebrew/Caskroom/flutter/latest/flutter/bin"' &gt;&gt; ~/.zprofile</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>source ~/.zprofile</code></pre></div>
+    
+    <h3>6.2. Cấu hình Xcode & Công cụ</h3>
+    <h4 class="ext-red">Cài Xcode trong AppStore sau đó cài Emulator. Sau đó làm các bước sau:</h4>
+    <h4>Bước 1: Kiểm tra đường dẫn</h4>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>xcode-select -p</code></pre></div>
+    
+    <h4>Bước 2: Xử lý kết quả</h4>
+    <ul>
+        <li>Nếu kết quả là: <code class="ext-red">/Applications/Xcode.app/Contents/Developer</code>
+            <ul>
+                <li>Đúng, không cần thực hiện thêm bước nào.</li>
+            </ul>
+        </li>
+        <li>Nếu kết quả là: <code class="ext-red">/Library/Developer/CommandLineTools</code>
+            <ul>
+                <li>Đang sử dụng Command Line Tools. Hãy chuyển sang Xcode bằng lệnh:
+                    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code></pre></div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h4>Bước 3: Khởi tạo Xcode</h4>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>sudo xcodebuild -runFirstLaunch</code></pre></div>
+
+    <h3>6.3. Cài đặt CocoaPods</h3>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>brew install cocoapods</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>pod --version</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>which pod</code></pre></div>
+
+    <h3>6.4. Cài đặt Android Studio</h3>
+    <p>Tải tại: <a href="https://developer.android.com/studio" target="_blank" title="Android Studio">Android Studio</a></p>
+    <div class="expected-output">Cài SDK: Android SDK Platform-Tools + Android SDK Command-line Tools + Android Emulator</div>
+    <p>Sau đó chạy:</p>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo 'export ANDROID_HOME=$HOME/Library/Android/sdk' &gt;&gt; ~/.zprofile</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo 'export PATH="$PATH:$ANDROID_HOME/emulator"' &gt;&gt; ~/.zprofile</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo 'export PATH="$PATH:$ANDROID_HOME/platform-tools"' &gt;&gt; ~/.zprofile</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>source ~/.zprofile</code></pre></div>
+    
+    <p>Kết quả kiểm tra:</p>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>echo $ANDROID_HOME</code></pre></div>
+    <div class="expected-output">-&gt; /Users/baonguyenn/Library/Android/sdk</div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>which adb</code></pre></div>
+    <div class="expected-output">-&gt; .../platform-tools/adb</div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>which emulator</code></pre></div>
+    <div class="expected-output">-&gt; .../emulator/emulator</div>
+
+    <h3>6.5. Kiểm tra flutter doctor</h3>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>flutter doctor --android-licenses</code></pre></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>flutter doctor -v</code></pre></div>
+
+    <h3>6.6. VS Code Extension</h3>
+    <p>Trong VS Code, cài đặt Extension: <strong class="ext-red">Flutter</strong></p>
+
+    <h2>7. Lập trình Java (IntelliJ)</h2>
+    <p>Tải tại: <a href="https://www.jetbrains.com/" target="_blank" title="IntelliJ IDEA">IntelliJ IDEA</a></p>
+
+    <h2>8. Cơ sở dữ liệu &amp; Container (Docker + MySQL)</h2>
+
+    <h3>8.1. Docker</h3>
+    <p>
+        Tải trực tiếp từ web và cài đặt:
+        <a href="https://www.docker.com/products/docker-desktop/" target="_blank" title="Docker Desktop">
+            Docker Desktop
+        </a>
+    </p>
+
+    <p>Kiểm tra cài đặt:</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>docker --version</code></pre>
+    </div>
+
+    <h3>8.2. MySQL qua Docker</h3>
+
+    <p>Tạo và chạy container MySQL:</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>docker run --name baonguyenn-mysql -e MYSQL_ROOT_PASSWORD=Bao@23022005 -p 3306:3306 -d mysql:latest</code></pre>
+    </div>
+
+    <p>Dừng container:</p>
+    <div class="code-wrapper">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>docker stop baonguyenn-mysql</code></pre>
+    </div>
+
+    <h3>8.3. MySQL Workbench</h3>
+    <p>
+        Tải và cài đặt phiên bản dành cho Mac từ trang chủ MySQL:
+        <a href="https://dev.mysql.com/downloads/workbench/" target="_blank" title="MySQL Workbench">
+            MySQL Workbench
+        </a>
+    </p>
+
+    <h3>8.4. VS Code Extensions</h3>
+    <p>Cài đặt các Extension sau:</p>
+    <ul>
+        <li><strong class="ext-red">Docker</strong></li>
+        <li><strong class="ext-red">SQLTools</strong></li>
+        <li><strong class="ext-red">SQLTools MySQL/MariaDB/TiDB</strong></li>
+    </ul>
+
+    <h2>9. Các Extensions cần cài thêm</h2>
+    <ul class="extension-list">
+        <li><strong class="ext-red">GitHub Theme</strong> -> Chọn <em>GitHub Dark</em></li>
+        <li><strong class="ext-red">Code Runner</strong> -> Setting -> <em>Run In Terminal</em></li>
+        <li><strong class="ext-red">Better Comments</strong></li>
+        <li><strong class="ext-red">Material Icon Theme</strong> -> Set Icon</li>
+        <li><strong class="ext-red">Live Server</strong></li>
+        <li><strong class="ext-red">Auto…</strong></li>
+        <li><strong class="ext-red">Codex</strong></li>
+        <li><strong class="ext-red">BlackBox</strong></li>
+    </ul>
+    <div class="note" style="border-left-color: #dc3545;">
+        <strong style="color: #dc3545;">⚠️ Nhắc nhở: Khi cài xong tất cả thì reload lại VS Code để load all extension.</strong>
+    </div>
+
+    <h2>10. Tạo cấu trúc thư mục</h2>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>mkdir -p SourceCode/{CodePTIT/{C,C#,C++,Dart,Python},CodeTraining,Demos,Projects/{Website,WebApp,MobileApp/{Native/{IOS,Android},Hybrid,CrossPlatform}}}</code></pre></div>
+
+</div>
+
+<script>
+    function copyCode(button) {
+        const codeElement = button.nextElementSibling.querySelector('code');
+        const textToCopy = codeElement.innerText;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            button.innerText = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.innerText = 'Copy';
+                button.classList.remove('copied');
+            }, 1500);
+        });
+    }
+</script>
+
+</body>
+</html>
